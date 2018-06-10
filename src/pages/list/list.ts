@@ -12,8 +12,7 @@ export class ListPage {
 
   }
 
-  goToAddEvent(fab: FabContainer) {
-    fab.close();
+  goToAddEvent() {
     console.log("Sharing in");
   }
 }
