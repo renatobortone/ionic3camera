@@ -10,17 +10,37 @@
 <ion-content>
   <form (ngSubmit)="addEvent()">
     <ion-item>
-      <ion-label>Nome do Evento</ion-label>
-      <ion-input type="text" [(ngModel)]="event.title" name="title"></ion-input>
+      <ion-label floating>Nome do Evento</ion-label>
+      <ion-input type="text" [(ngModel)]="event.name" name="title"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Descrição</ion-label>
-      <ion-textarea [(ngModel)]="event.description" name="description"></ion-textarea>
+      <ion-label floating>Nome do Cliente</ion-label>
+      <ion-input type="text" [(ngModel)]="event.customer" name="title"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Descrição</ion-label>
-      <ion-textarea [(ngModel)]="event.description" name="description"></ion-textarea>
+      <ion-label floating>Nome do Cliente</ion-label>
+      <ion-input type="text" [(ngModel)]="event.nameCustomer" name="title"></ion-input>
     </ion-item>
-    <button ion-button type="submit" block>Adicionar</button>
+    <ion-item>
+      <ion-label floating>Telefone do Cliente</ion-label>
+      <ion-input type="tel" [(ngModel)]="event.phone" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Imagem do Evento</ion-label>
+      <ion-input type="file" class="file" [(ngModel)]="event.image" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Imagem da Máscara</ion-label>
+      <ion-input type="file" class="file" [(ngModel)]="event.mask" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo da Máscara</ion-label>
+      <ion-select [(ngModel)]="event.typeMask" name="typeMask">
+        <ion-option value="frame">Moldura</ion-option>
+        <ion-option value="subtitule">Legenda</ion-option>
+        <ion-option value="water-mask">Marca Dágua</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button type="submit" block>Salvar</button>
   </form>
 </ion-content>

@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { AddPage } from '../pages/add/add';
+import { EventPage } from '../pages/event/event';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,7 +19,8 @@ import { Camera } from '@ionic-native/camera';
     MyApp,
     HomePage,
     ListPage,
-    AddPage
+    AddPage,
+    EventPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { Camera } from '@ionic-native/camera';
     MyApp,
     HomePage,
     ListPage,
-    AddPage
+    AddPage,
+    EventPage
   ],
   providers: [
     StatusBar,

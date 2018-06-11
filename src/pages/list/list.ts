@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
 import { AddPage } from '../add/add';
+import { EventPage } from '../event/event';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-list',
@@ -8,11 +10,30 @@ import { AddPage } from '../add/add';
 })
 export class ListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  list = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private nativeStorage: NativeStorage, public events: Events) {
+    this.nativeStorage.getItem('events')
+      .then(data => {
+          this.list = data;
+          console.log(data);
+        });
+
+        this.events.subscribe('events:created', (data, time) => {
+          this.list = data;
+          console.log(data);
+        });
 
   }
 
   goToAddEvent() {
     this.navCtrl.push(AddPage);
+  }
+
+  goToEvent(name: string) {
+    this.navCtrl.push(AddPage, {
+      name
+    });
   }
 }

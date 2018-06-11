@@ -3,25 +3,23 @@ import { NavController, NavParams, Events } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
-  selector: 'page-add',
-  templateUrl: 'add.html'
+  selector: 'page-event',
+  templateUrl: 'event.html'
 })
-export class AddPage {
+export class EventPage {
 
   name = null;
   event = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private nativeStorage: NativeStorage, public events: Events) {
-      this.name = this.navParams.get('name');
-      if(this.name){
-        this.nativeStorage.getItem('events')
-        .then(
-          data => {
-            console.log(data);
-            this.event = data.find(item => item.name === this.name);
-          })
-      }
+
+    this.name = this.navParams.get('name');
+    this.nativeStorage.getItem('events')
+      .then(
+        data => {
+          this.event = data.find({ name: this.name})
+        });
   }
 
   addEvent() {
