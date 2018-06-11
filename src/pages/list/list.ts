@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, FabContainer } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { NavController, NavParams } from 'ionic-angular';
+import { AddPage } from '../add/add';
 
 @Component({
   selector: 'page-list',
@@ -13,6 +13,6 @@ export class ListPage {
   }
 
   goToAddEvent() {
-    console.log("Sharing in");
+    this.navCtrl.push(AddPage);
   }
 }

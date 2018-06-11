@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Evento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="addEvent()">
+    <ion-item>
+      <ion-label>Nome do Evento</ion-label>
+      <ion-input type="text" [(ngModel)]="event.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descrição</ion-label>
+      <ion-textarea [(ngModel)]="event.description" name="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descrição</ion-label>
+      <ion-textarea [(ngModel)]="event.description" name="description"></ion-textarea>
+    </ion-item>
+    <button ion-button type="submit" block>Adicionar</button>
+  </form>
+</ion-content>

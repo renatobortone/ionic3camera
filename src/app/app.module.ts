@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { AddPage } from '../pages/add/add';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,7 +17,8 @@ import { Camera } from '@ionic-native/camera';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    AddPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { Camera } from '@ionic-native/camera';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    AddPage
   ],
   providers: [
     StatusBar,
