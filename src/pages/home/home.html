@@ -8,21 +8,24 @@
 </ion-header>
 
 <ion-content padding>
+
+  <form [formGroup]="loginForm" (ngSubmit)='login()' novalidate>
   <ion-list>
 
     <ion-item>
       <ion-label floating>E-mail</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-input formControlName="username" required="required" type="email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Senha</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input formControlName="password" type="password" required="required"></ion-input>
     </ion-item>
 
   </ion-list>
 
   <div padding>
-    <button ion-button block (click)="login()">Enviar</button>
+    <button ion-button block type="submit">Enviar</button>
   </div>
+  </form>
 </ion-content>
